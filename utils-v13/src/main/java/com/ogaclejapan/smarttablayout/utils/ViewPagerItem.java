@@ -15,10 +15,10 @@
  */
 package com.ogaclejapan.smarttablayout.utils;
 
-import android.support.annotation.LayoutRes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.annotation.LayoutRes;
 
 public class ViewPagerItem extends PagerItem {
 

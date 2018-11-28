@@ -15,13 +15,13 @@
  */
 package com.ogaclejapan.smarttablayout.utils.v13;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.support.v13.app.FragmentStatePagerAdapter;
-import android.support.v4.util.SparseArrayCompat;
 import android.view.ViewGroup;
-
 import java.lang.ref.WeakReference;
+import androidx.annotation.NonNull;
+import androidx.collection.SparseArrayCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
 public class FragmentStatePagerItemAdapter extends FragmentStatePagerAdapter {
 
@@ -44,8 +44,8 @@ public class FragmentStatePagerItemAdapter extends FragmentStatePagerAdapter {
     return getPagerItem(position).instantiate(pages.getContext(), position);
   }
 
-  @Override
-  public Object instantiateItem(ViewGroup container, int position) {
+  @Override @NonNull
+  public Object instantiateItem(@NonNull ViewGroup container, int position) {
     Object item = super.instantiateItem(container, position);
     if (item instanceof Fragment) {
       holder.put(position, new WeakReference<Fragment>((Fragment) item));
@@ -54,7 +54,7 @@ public class FragmentStatePagerItemAdapter extends FragmentStatePagerAdapter {
   }
 
   @Override
-  public void destroyItem(ViewGroup container, int position, Object object) {
+  public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
     holder.remove(position);
     super.destroyItem(container, position, object);
   }

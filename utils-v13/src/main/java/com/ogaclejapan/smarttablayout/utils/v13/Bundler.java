@@ -23,7 +23,6 @@ import android.os.Parcelable;
 import android.util.Size;
 import android.util.SizeF;
 import android.util.SparseArray;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 

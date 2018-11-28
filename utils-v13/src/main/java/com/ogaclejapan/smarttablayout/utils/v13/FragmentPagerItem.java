@@ -15,11 +15,10 @@
  */
 package com.ogaclejapan.smarttablayout.utils.v13;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
-
 import com.ogaclejapan.smarttablayout.utils.PagerItem;
+import androidx.fragment.app.Fragment;
 
 public class FragmentPagerItem extends PagerItem {
 
