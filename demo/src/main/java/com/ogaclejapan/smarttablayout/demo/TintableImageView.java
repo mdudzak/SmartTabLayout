@@ -4,12 +4,12 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import android.widget.ImageView;
+import androidx.appcompat.widget.AppCompatImageView;
 
 /**
  * https://gist.github.com/tylerchesley/5d15d859be4f3ce31213
  */
-public class TintableImageView extends ImageView {
+public class TintableImageView extends AppCompatImageView {
 
   private ColorStateList tint;
 

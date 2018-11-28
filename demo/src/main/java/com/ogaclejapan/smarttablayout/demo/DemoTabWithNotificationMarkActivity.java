@@ -4,21 +4,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItem;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
-
 import java.util.Random;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 public class DemoTabWithNotificationMarkActivity extends AppCompatActivity implements
     SmartTabLayout.TabProvider {
@@ -40,16 +38,16 @@ public class DemoTabWithNotificationMarkActivity extends AppCompatActivity imple
 
     final Demo demo = getDemo();
 
-    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+    Toolbar toolbar = findViewById(R.id.toolbar);
     toolbar.setTitle(demo.titleResId);
     setSupportActionBar(toolbar);
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-    ViewGroup tab = (ViewGroup) findViewById(R.id.tab);
+    ViewGroup tab = findViewById(R.id.tab);
     tab.addView(LayoutInflater.from(this).inflate(demo.layoutResId, tab, false));
 
-    ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
-    final SmartTabLayout viewPagerTab = (SmartTabLayout) findViewById(R.id.viewpagertab);
+    ViewPager viewPager = findViewById(R.id.viewpager);
+    final SmartTabLayout viewPagerTab = findViewById(R.id.viewpagertab);
     viewPagerTab.setCustomTabView(this);
 
     FragmentPagerItems pages = new FragmentPagerItems(this);
@@ -92,7 +90,7 @@ public class DemoTabWithNotificationMarkActivity extends AppCompatActivity imple
     View tab = inflater.inflate(R.layout.custom_tab_icon_and_notification_mark, container, false);
     View mark = tab.findViewById(R.id.custom_tab_notification_mark);
     mark.setVisibility(View.GONE);
-    ImageView icon = (ImageView) tab.findViewById(R.id.custom_tab_icon);
+    ImageView icon = tab.findViewById(R.id.custom_tab_icon);
     switch (position) {
       case 0:
         icon.setImageDrawable(res.getDrawable(R.drawable.ic_home_white_24dp));
